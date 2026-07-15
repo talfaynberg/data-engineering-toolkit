@@ -58,4 +58,4 @@ validation tool that consolidated and cross-checked product data across
 a catalogue system, an ERP system, and several reporting sheets, producing
 categorized issue reports for a data team to action. This repo reframes
 that logic in a general, portfolio-friendly form, plus a couple of
-adjacent skills (SQL reporting, basic ML) relevant to Python/AI roles.
+adjacent skills (SQL reporting, basic ML).
