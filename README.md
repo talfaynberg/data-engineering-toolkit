@@ -1,5 +1,7 @@
 # Data Processing & Automation Toolkit
 
+![Run scripts](https://github.com/<your-username>/<repo-name>/actions/workflows/run-scripts.yml/badge.svg)
+
 Six standalone Python scripts demonstrating the kind of data quality,
 reconciliation, ETL, and reporting work I do day to day, plus one
 ML-adjacent piece. Originally built as VBA/Excel tooling for production
@@ -36,16 +38,25 @@ A TF-IDF + logistic regression classifier that auto-categorizes short
 issue/ticket text into fixed categories, trained and evaluated on
 labeled examples with scikit-learn.
 
+### `anomaly_detector.py`
+An unsupervised anomaly detection engine (IsolationForest) for flagging
+catalogue/inventory records that look statistically off — price spikes,
+stock gluts, dead stock — without needing pre-labeled examples. Includes
+category-relative feature engineering, a z-score baseline for comparison,
+evaluation against synthetic injected anomalies, and model persistence
+via joblib.
+
 ## Run locally
 
 ```bash
-pip install pandas openpyxl scikit-learn
+pip install -r requirements.txt
 python data_reconciliation.py
 python data_quality_validator.py
 python bom_comparator.py
 python etl_pipeline.py
 python sql_reporting.py
 python ticket_classifier.py
+python anomaly_detector.py
 ```
 
 Each script runs standalone with built-in synthetic data — no external
@@ -58,4 +69,4 @@ validation tool that consolidated and cross-checked product data across
 a catalogue system, an ERP system, and several reporting sheets, producing
 categorized issue reports for a data team to action. This repo reframes
 that logic in a general, portfolio-friendly form, plus a couple of
-adjacent skills (SQL reporting, basic ML).
+adjacent skills (SQL reporting, basic ML) relevant to Python/AI roles.
